@@ -1,30 +1,23 @@
-import java.util.*;
+// import java.util.*;
 public class InsertionSort {
-    public static void Search(int []arr){
-        for(int i=1;i<arr.length;i++){
-            int key=arr[i];
-            int j =i-1;
-            while(j>=0 && arr[j]>key){
+    public static void Sort(int []arr){
+        for(int i=1;i<arr.length;i++){ //starts from 2nd value of array
+            int key = arr[i]; 
+            int j = i-1;
+            while(j>=0 && arr[j]>key){ //comparing arrays first element is greater then second if yes then it will swap
                 arr[j+1] = arr[j];
                 j--;
             }
-            arr[j+1]=key;
+            arr[j+1] = key;
         }
     }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Size of an Array: ");
-        int size = sc.nextInt();
-        int []arr = new int[size];
-        System.out.print("Enter Elements of an Array: ");
-        for(int i=0;i<size;i++){
-            arr[i] = sc.nextInt();
-        }
-        // int arr[] = {1,5,6,7,3};
-         Search(arr);
+        int arr[] = {88,66,99,4,6,7,2};
+        Sort(arr);
         for(int value:arr){
-            System.out.print(value+"\t");
+            System.out.print(value + "\t");
+
         }
     }
-    
 }
